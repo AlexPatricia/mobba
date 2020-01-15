@@ -24,6 +24,7 @@ function getlocation(){
         [geolocationOptions]);
 }
 
+//Cordova würde weitere Optionen erlauben -> deshalb Abfrage ob PWA oder Cordova
 function bodyGeladen(){
     if (window.usingCordova){
         console.log("is a native App");
@@ -45,4 +46,6 @@ function initApp(){
         } 
     });
 }
+
+//deviceready ist getriggert von Cordova -> deshalb hat Framework 7 auch gefehlt weil initApp nicht ausgeführt wurde
 document.addEventListener('deviceready',initApp,false);
